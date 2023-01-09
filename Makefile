@@ -1,3 +1,3 @@
 .PHONY: all
 all:
-	npx markdown-toc -i README.md
+	npx markdown-toc --bullets=- -i README.md
