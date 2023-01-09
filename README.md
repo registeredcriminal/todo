@@ -2,24 +2,25 @@
 
 <!-- toc -->
 
-- [Description](#description)
-- [Prerequisites](#prerequisites)
-- [Module 1: Project initialization](#module-1-project-initialization)
-  * [Create a new react application](#create-a-new-react-application)
-  * [Understanding the project layout](#understanding-the-project-layout)
-- [Module 2: Start building the todo application components](#module-2-start-building-the-todo-application-components)
-- [Module 3: Style the components](#module-3-style-the-components)
-- [Module 4: Add a form to create a new todo task](#module-4-add-a-form-to-create-a-new-todo-task)
-- [Module 5: Delete tasks](#module-5-delete-tasks)
-- [Module 6: Mark Tasks Complete](#module-6-mark-tasks-complete)
-- [Module 7: Load from the API](#module-7-load-from-the-api)
-  * [Backend](#backend)
-  * [Frontend](#frontend)
-- [Module 8: Create, Delete and Update Todos in the Backend](#module-8-create-delete-and-update-todos-in-the-backend)
-- [Module 9: Final Project](#module-9-final-project)
-  * [Junior Level](#junior-level)
-  * [Intermediate Level](#intermediate-level)
-  * [Advanced Level](#advanced-level)
+- [Todo Application](#todo-application)
+  - [Description](#description)
+  - [Prerequisites](#prerequisites)
+  - [Module 1: Project initialization](#module-1-project-initialization)
+    - [Create a new react application](#create-a-new-react-application)
+    - [Understanding the project layout](#understanding-the-project-layout)
+  - [Module 2: Start building the todo application components](#module-2-start-building-the-todo-application-components)
+  - [Module 3: Style the components](#module-3-style-the-components)
+  - [Module 4: Add a form to create a new todo task](#module-4-add-a-form-to-create-a-new-todo-task)
+  - [Module 5: Delete tasks](#module-5-delete-tasks)
+  - [Module 6: Mark Tasks Complete](#module-6-mark-tasks-complete)
+  - [Module 7: Load from the API](#module-7-load-from-the-api)
+    - [Backend](#backend)
+    - [Frontend](#frontend)
+  - [Module 8: Create, Delete and Update Todos in the Backend](#module-8-create-delete-and-update-todos-in-the-backend)
+  - [Module 9: Final Project](#module-9-final-project)
+    - [Junior Level: Required](#junior-level-required)
+    - [Intermediate Level: Recommended](#intermediate-level-recommended)
+    - [Advanced Level: Bonus Points](#advanced-level-bonus-points)
 
 <!-- tocstop -->
 
@@ -29,21 +30,21 @@ This project provides both a frontend and backend implementation for a todo web 
 
 You'll be building a todo application.  Building a todo application is a common way to learn about interacting with your framework and language.  A todo application should at a minimum implement the following actions:
 
-* Create new todo tasks
-* Display all todo tasks (allowing the user to filter the tasks based on their completion state { completed, incomplete })
-* Complete todo tasks
+- Create new todo tasks
+- Display all todo tasks (allowing the user to filter the tasks based on their completion state { completed, incomplete })
+- Complete todo tasks
 
 After building the todo application, we will extend the application to persist the tasks to a database.  This will allow the user to reload the page and still be able to see the tasks.
 
 ## Prerequisites
 
-* Github account: Go to [github.com](https://github.com) and signup for a free account.  This will allow you to keep track of your changes as you progress through the todo application.
+- Github account: Go to [github.com](https://github.com) and signup for a free account.  This will allow you to keep track of your changes as you progress through the todo application.
 
-  * Once you have signed up for a free account, go to [https://github.com/okanaganrusty/todo](https://github.com/okanaganrusty/todo) and click on the `Fork` button in the top-right corner of the Github page.  This will make a forked copy of the todo application, in your own account.
+  - Once you have signed up for a free account, go to [https://github.com/okanaganrusty/todo](https://github.com/okanaganrusty/todo) and click on the `Fork` button in the top-right corner of the Github page.  This will make a forked copy of the todo application, in your own account.
 
-  * Clone the repository in Visual Studio Code using the Github plugin.  The clone URL can be found by clicking on the green `Code` button in Github.  It will provide you a `https://` clone URL.
+  - Clone the repository in Visual Studio Code using the Github plugin.  The clone URL can be found by clicking on the green `Code` button in Github.  It will provide you a `https://` clone URL.
 
-  * Each time you make changes, you will need to `Commit your changes` and then `Push your changes` in Visual Studio Code to Github.  This will show the version tracking and changes to your todo application.
+  - Each time you make changes, you will need to `Commit your changes` and then `Push your changes` in Visual Studio Code to Github.  This will show the version tracking and changes to your todo application.
 
 ## Module 1: Project initialization
 
@@ -82,7 +83,7 @@ The following files from the project directory (relative pathnames to your proje
     This stylesheet is used in `App.js`, which renders the `<App />` component.  Any changes made in this CSS file will only affect the `<App />` component.
 
 1. `src/App.test.js`: JavaScript integration tests to validate the application component is working as expected.
- 
+
     These tests are run by using the `npm test` command, and are written in JavaScript.
 
 1. `src/reportWebVitals.js`: Reports web vitals of the project to the console and browser.
@@ -97,8 +98,8 @@ The following files from the project directory (relative pathnames to your proje
 
 1. Create an two empty files called:
 
-    * `src/Todo.css`: Todo component stylesheet (css)
-    * `src/Tasks.css`: Tasks component stylesheet (css)
+    - `src/Todo.css`: Todo component stylesheet (css)
+    - `src/Tasks.css`: Tasks component stylesheet (css)
 
 1. Create a new file called `src/Todo.js` this will be the component that renders an individual todo item.
 
@@ -234,10 +235,10 @@ Apply some basic table styling to the components so that they are cleaner to ide
 
 We know that our application hierarchy is, and that the styles cascade downstream to the child components.  So, for now, we will apply our styles inside of `src/index.css`
 
-* Our react rendering source `src/index.js` inherits styles from `src/index.css`.
-* Our `<App />` component inherits styles from `src/App.css` stylesheet.
-* Our `<Tasks />` component use the `src/Tasks.css` stylesheet.
-* Our `<Todo />` components use the `src/Todo.css` stylesheet.
+- Our react rendering source `src/index.js` inherits styles from `src/index.css`.
+- Our `<App />` component inherits styles from `src/App.css` stylesheet.
+- Our `<Tasks />` component use the `src/Tasks.css` stylesheet.
+- Our `<Todo />` components use the `src/Todo.css` stylesheet.
 
 1. Open up `src/index.css` and add the styles:
 
@@ -643,25 +644,27 @@ Updating the `src/Tasks.js` file with the following code will make the react app
 
 ## Module 9: Final Project
 
-### Junior Level
+Submitting the final project should be done by sending a link of your Github repository, with your all of your changes committed and pushed.  This will be the final project that we will be reviewing to provide you with a final grade.
 
-* Style your todo application with a HTML/CSS layout.
-  * Using HTML and CSS styling that we've learnt through the G2T program.  Style the todo application.  This can include changing layouts, using a different table format, using list items.
+### Junior Level: Required
 
-* Publish your project to the Internet (Netlify or Vercel are both free services for this).
-  * Vercel: [https://vercel.com](https://vercel.com): You can use your Github account for authentication.
-  * Netlify: [https://netlify.com](https://netlify.com)
+- Style your todo application with a HTML/CSS layout.
+  - Using HTML and CSS styling that we've learnt through the G2T program.  Style the todo application.  This can include changing layouts, using a different table format, using list items.
 
-### Intermediate Level
+- Publish your project to the Internet (Netlify or Vercel are both free services for this).
+  - Vercel: [https://vercel.com](https://vercel.com): You can use your Github account for authentication.
+  - Netlify: [https://netlify.com](https://netlify.com)
 
-* Add filtering to the todo application
-  * Allow the user to filter the list of tasks to only display completed, versus incomplete tasks.
+- Add filtering to the todo application
+  - Allow the user to filter the list of tasks to only display completed, versus incomplete tasks.
 
-### Advanced Level
+### Intermediate Level: Recommended
 
-* Convert the frontend reactjs application to use redux for state
-  * Redux: [https://redux.js.org/](https://redux.js.org/)
+- Convert the frontend reactjs application to use redux for state
+  - Redux: [https://redux.js.org/](https://redux.js.org/)
 
-* Add authentication and authorization to the application.
-  * An example of authentication and authorization would be that any non-authenticated user should be able to see your todo items, but they should not be able to add, delete or modify them.
-  * Another example of authentication and authorization would be that any non-authenticated user should not be able to see anything but a login page.  Once logged in, they should be able to add, delete and modify todo items.
+### Advanced Level: Bonus Points
+
+- Add authentication and authorization to the application.
+  - An example of authentication and authorization would be that any non-authenticated user should be able to see your todo items, but they should not be able to add, delete or modify them.
+  - Another example of authentication and authorization would be that any non-authenticated user should not be able to see anything but a login page.  Once logged in, they should be able to add, delete and modify todo items.
