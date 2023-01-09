@@ -481,3 +481,123 @@ _You'll see `...` in the examples which just means that the content before and a
   return <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} setTodoCompleted={setTodoCompleted} />
   ...
   ```
+
+## Module 7: Load from the API
+
+### Backend
+
+Because the frontend and backend are running as separate processes and use different ports, the [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) module must be enabled, so we can serve back `Access-Control-Allow-Origin` headers in the HTTP requests.
+
+Install the `CORS` module by running:
+
+```bash
+npm install cors
+```
+
+In the file `backend/app.js` add the following lines to enable CORS.  Once this has been applied, restart the backend process.
+
+```javascript
+const cors = require('cors');
+
+app.use(cors({
+   origin: '*', 
+   credentials: false,
+   optionSuccessStatus: 200
+}))
+```
+
+### Frontend
+
+Using the `useEffect` statement in react, without any dependencies `[]` we tell react to run on the initial state rendering.  This goes to the remote API and fetches the todos.  
+
+You will see that the requests fail in your web browser console, if the CORS module is not loaded or installed incorrectly.
+
+The error should look like this: `Access to fetch at 'http://localhost:3000/todos' from origin 'http://localhost:3001' has been blocked by C
+ORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque respons
+e serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.`
+
+  ```javascript
+  import { useState, useEffect } from 'react';
+
+  ...
+
+  const TODO_BASE_URL = 'http://localhost:3000/todos';
+
+  const fetchData = async () => {
+      const response = await fetch(TODO_BASE_URL)
+      const data = await response.json()
+
+      setTasks((tasks) => data)
+    }
+
+    useEffect(() => {
+      fetchData()
+    }, [])
+
+  ...
+  ```
+
+## Module 8: Create, Delete and Update Todos in the Backend
+
+Updating the `src/Tasks.js` file with the following code will make the react application interact with the backend.  When you refresh your page, or reload, you will see that the tasks are persisted.
+
+  ```javascript
+    function addTodo(task) {
+      const postBody = JSON.stringify({
+        title: task,
+        completed: false,
+      })
+
+      fetch(TODO_BASE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: postBody
+      }).then(
+        response => response.json()
+      ).then((result) => {
+        setTasks(tasks => [
+          ...tasks,
+          {
+            id: result.id,
+            title: result.title,
+            completed: result.completed,
+          }
+        ])
+      })
+    }
+
+    function deleteTodo(taskId) {
+      fetch(TODO_BASE_URL + '/' + taskId, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' }
+      }).then(() =>
+        setTasks((tasks) => tasks.filter((task) => task.id !== taskId))
+      )
+    }
+
+    function setTodoCompleted(todo) {
+      const putBody = JSON.stringify({
+        completed: !todo.completed
+      })
+
+      fetch(TODO_BASE_URL + '/' + todo.id, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: putBody
+      }).then(() => {
+        setTasks((tasks) => {
+          return tasks.map((task) => {
+            if (task.id === todo.id) {
+              return {
+                ...task, ...{
+                  completed: !todo.completed
+                }
+              }
+            }
+
+            return task;
+          })
+        })
+      })
+    }
+  ```
