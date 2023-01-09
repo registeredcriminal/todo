@@ -1,5 +1,30 @@
 # Todo Application
 
+<!-- toc -->
+
+- [Description](#description)
+- [Prerequisites](#prerequisites)
+- [Module 1: Project initialization](#module-1-project-initialization)
+  * [Create a new react application](#create-a-new-react-application)
+  * [Understanding the project layout](#understanding-the-project-layout)
+- [Module 2: Start building the todo application components](#module-2-start-building-the-todo-application-components)
+- [Module 3: Style the components](#module-3-style-the-components)
+- [Module 4: Add a form to create a new todo task](#module-4-add-a-form-to-create-a-new-todo-task)
+- [Module 5: Delete tasks](#module-5-delete-tasks)
+- [Module 6: Mark Tasks Complete](#module-6-mark-tasks-complete)
+- [Module 7: Load from the API](#module-7-load-from-the-api)
+  * [Backend](#backend)
+  * [Frontend](#frontend)
+- [Module 8: Create, Delete and Update Todos in the Backend](#module-8-create-delete-and-update-todos-in-the-backend)
+- [Module 9: Final Project](#module-9-final-project)
+  * [Junior Level](#junior-level)
+  * [Intermediate Level](#intermediate-level)
+  * [Advanced Level](#advanced-level)
+
+<!-- tocstop -->
+
+This project provides both a frontend and backend implementation for a todo web application.
+
 ## Description
 
 You'll be building a todo application.  Building a todo application is a common way to learn about interacting with your framework and language.  A todo application should at a minimum implement the following actions:
@@ -9,6 +34,16 @@ You'll be building a todo application.  Building a todo application is a common 
 * Complete todo tasks
 
 After building the todo application, we will extend the application to persist the tasks to a database.  This will allow the user to reload the page and still be able to see the tasks.
+
+## Prerequisites
+
+* Github account: Go to [github.com](https://github.com) and signup for a free account.  This will allow you to keep track of your changes as you progress through the todo application.
+
+  * Once you have signed up for a free account, go to [https://github.com/okanaganrusty/todo](https://github.com/okanaganrusty/todo) and click on the `Fork` button in the top-right corner of the Github page.  This will make a forked copy of the todo application, in your own account.
+
+  * Clone the repository in Visual Studio Code using the Github plugin.  The clone URL can be found by clicking on the green `Code` button in Github.  It will provide you a `https://` clone URL.
+
+  * Each time you make changes, you will need to `Commit your changes` and then `Push your changes` in Visual Studio Code to Github.  This will show the version tracking and changes to your todo application.
 
 ## Module 1: Project initialization
 
@@ -497,6 +532,8 @@ npm install cors
 In the file `backend/app.js` add the following lines to enable CORS.  Once this has been applied, restart the backend process.
 
 ```javascript
+...
+
 const cors = require('cors');
 
 app.use(cors({
@@ -504,6 +541,8 @@ app.use(cors({
    credentials: false,
    optionSuccessStatus: 200
 }))
+
+...
 ```
 
 ### Frontend
@@ -601,3 +640,28 @@ Updating the `src/Tasks.js` file with the following code will make the react app
     })
   }
   ```
+
+## Module 9: Final Project
+
+### Junior Level
+
+* Style your todo application with a HTML/CSS layout.
+  * Using HTML and CSS styling that we've learnt through the G2T program.  Style the todo application.  This can include changing layouts, using a different table format, using list items.
+
+* Publish your project to the Internet (Netlify or Vercel are both free services for this).
+  * Vercel: [https://vercel.com](https://vercel.com): You can use your Github account for authentication.
+  * Netlify: [https://netlify.com](https://netlify.com)
+
+### Intermediate Level
+
+* Add filtering to the todo application
+  * Allow the user to filter the list of tasks to only display completed, versus incomplete tasks.
+
+### Advanced Level
+
+* Convert the frontend reactjs application to use redux for state
+  * Redux: [https://redux.js.org/](https://redux.js.org/)
+
+* Add authentication and authorization to the application.
+  * An example of authentication and authorization would be that any non-authenticated user should be able to see your todo items, but they should not be able to add, delete or modify them.
+  * Another example of authentication and authorization would be that any non-authenticated user should not be able to see anything but a login page.  Once logged in, they should be able to add, delete and modify todo items.
