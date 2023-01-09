@@ -542,62 +542,62 @@ e serves your needs, set the request's mode to 'no-cors' to fetch the resource w
 Updating the `src/Tasks.js` file with the following code will make the react application interact with the backend.  When you refresh your page, or reload, you will see that the tasks are persisted.
 
   ```javascript
-    function addTodo(task) {
-      const postBody = JSON.stringify({
-        title: task,
-        completed: false,
-      })
+  function addTodo(task) {
+    const postBody = JSON.stringify({
+      title: task,
+      completed: false,
+    })
 
-      fetch(TODO_BASE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: postBody
-      }).then(
-        response => response.json()
-      ).then((result) => {
-        setTasks(tasks => [
-          ...tasks,
-          {
-            id: result.id,
-            title: result.title,
-            completed: result.completed,
-          }
-        ])
-      })
-    }
+    fetch(TODO_BASE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: postBody
+    }).then(
+      response => response.json()
+    ).then((result) => {
+      setTasks(tasks => [
+        ...tasks,
+        {
+          id: result.id,
+          title: result.title,
+          completed: result.completed,
+        }
+      ])
+    })
+  }
 
-    function deleteTodo(taskId) {
-      fetch(TODO_BASE_URL + '/' + taskId, {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' }
-      }).then(() =>
-        setTasks((tasks) => tasks.filter((task) => task.id !== taskId))
-      )
-    }
+  function deleteTodo(taskId) {
+    fetch(TODO_BASE_URL + '/' + taskId, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' }
+    }).then(() =>
+      setTasks((tasks) => tasks.filter((task) => task.id !== taskId))
+    )
+  }
 
-    function setTodoCompleted(todo) {
-      const putBody = JSON.stringify({
-        completed: !todo.completed
-      })
+  function setTodoCompleted(todo) {
+    const putBody = JSON.stringify({
+      completed: !todo.completed
+    })
 
-      fetch(TODO_BASE_URL + '/' + todo.id, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: putBody
-      }).then(() => {
-        setTasks((tasks) => {
-          return tasks.map((task) => {
-            if (task.id === todo.id) {
-              return {
-                ...task, ...{
-                  completed: !todo.completed
-                }
+    fetch(TODO_BASE_URL + '/' + todo.id, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: putBody
+    }).then(() => {
+      setTasks((tasks) => {
+        return tasks.map((task) => {
+          if (task.id === todo.id) {
+            return {
+              ...task, ...{
+                completed: !todo.completed
               }
             }
+          }
 
-            return task;
-          })
+          return task;
         })
       })
-    }
+    })
+  }
   ```
