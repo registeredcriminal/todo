@@ -2,24 +2,26 @@
 
 <!-- toc -->
 
-- [Description](#description)
-- [Prerequisites](#prerequisites)
-- [Module 1: Project initialization](#module-1-project-initialization)
-  - [Create a new react application](#create-a-new-react-application)
-  - [Understanding the project layout](#understanding-the-project-layout)
-- [Module 2: Start building the todo application components](#module-2-start-building-the-todo-application-components)
-- [Module 3: Style the components](#module-3-style-the-components)
-- [Module 4: Add a form to create a new todo task](#module-4-add-a-form-to-create-a-new-todo-task)
-- [Module 5: Delete tasks](#module-5-delete-tasks)
-- [Module 6: Mark Tasks Complete](#module-6-mark-tasks-complete)
-- [Module 7: Load from the API](#module-7-load-from-the-api)
-  - [Backend](#backend)
-  - [Frontend](#frontend)
-- [Module 8: Create, Delete and Update Todos in the Backend](#module-8-create-delete-and-update-todos-in-the-backend)
-- [Module 9: Final Project](#module-9-final-project)
-  - [Junior Level: Required](#junior-level-required)
-  - [Intermediate Level: Recommended](#intermediate-level-recommended)
-  - [Advanced Level: Bonus Points](#advanced-level-bonus-points)
+- [Todo Application](#todo-application)
+  - [Description](#description)
+  - [Prerequisites](#prerequisites)
+  - [Module 1: Project initialization](#module-1-project-initialization)
+    - [Create a new react application](#create-a-new-react-application)
+    - [Understanding the project layout](#understanding-the-project-layout)
+  - [Module 2: Start building the todo application components](#module-2-start-building-the-todo-application-components)
+  - [Module 3: Style the components](#module-3-style-the-components)
+  - [Module 4: Add a form to create a new todo task](#module-4-add-a-form-to-create-a-new-todo-task)
+  - [Module 5: Delete tasks](#module-5-delete-tasks)
+  - [Module 6: Mark Tasks Complete](#module-6-mark-tasks-complete)
+  - [Module 7: Load from the API](#module-7-load-from-the-api)
+    - [Backend](#backend)
+    - [Frontend](#frontend)
+  - [Module 8: Create, Delete and Update Todos in the Backend](#module-8-create-delete-and-update-todos-in-the-backend)
+  - [Module 9: Final Project](#module-9-final-project)
+    - [Grading](#grading)
+    - [Junior Level: Required](#junior-level-required)
+    - [Intermediate Level: Recommended](#intermediate-level-recommended)
+    - [Advanced Level: Bonus Points](#advanced-level-bonus-points)
 
 <!-- tocstop -->
 
@@ -645,10 +647,23 @@ Updating the `src/Tasks.js` file with the following code will make the react app
 
 Submitting the final project should be done by sending a link of your Github repository, with your all of your changes committed and pushed.  This will be the final project that we will be reviewing to provide you with a final grade.
 
+### Grading
+
+Grading will be based out of 25 marks, on the following criteria:
+
+- 8 Marks: Level of effort
+- 4 Marks: Proper indentation of all code (HTML, CSS, JavaScript)
+- 2 Marks: Submitting everything working and "completed"
+- 4 Marks: Achieving goals that you have chosen to complete.
+- 2 Marks: Polished finish (having the final project layout usable, clean and readable)
+- 3 Marks: Intermediate level criteria
+- 2 Marks: Advanced level criteria
+
 ### Junior Level: Required
 
 - Style your todo application with a HTML/CSS layout.
   - Using HTML and CSS styling that we've learnt through the G2T program.  Style the todo application.  This can include changing layouts, using a different table format, using list items.
+    - Feel free to write your own CSS rules, using [bootstrap](https://react-bootstrap.github.io/) or [https://tailwindcss.com/docs/guides/create-react-app](tailwind) are good starting points for designs
 
 - Publish your project to the Internet (Netlify or Vercel are both free services for this).
   - Vercel: [https://vercel.com](https://vercel.com): You can use your Github account for authentication.
@@ -659,10 +674,14 @@ Submitting the final project should be done by sending a link of your Github rep
 
 ### Intermediate Level: Recommended
 
+If you choose to submit the intermediate level criteria and you are unable to complete, please submit the work you had been working on, as we will review and grade based on level of effort and the level of completion.
+
 - Convert the frontend reactjs application to use redux for state
   - Redux: [https://redux.js.org/](https://redux.js.org/)
 
 ### Advanced Level: Bonus Points
+
+If you choose to submit the advanced level criteria and you are unable to complete, please submit the work you had been working on, as we will review and grade based on level of effort and the level of completion.
 
 - Add authentication and authorization to the application.
   - An example of authentication and authorization would be that any non-authenticated user should be able to see your todo items, but they should not be able to add, delete or modify them.
