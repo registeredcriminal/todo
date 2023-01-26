@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import './Todo.css';
 import './Tasks.css';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
@@ -79,6 +80,11 @@ function Tasks() {
       })
     })
   }
+  async function toggleTodo(completed) {
+    const response = await fetch(TODO_BASE_URL)
+    const data = await response.json()
+    setTasks((tasks) => data.filter(todo => { return todo.completed == completed || completed == null }))
+  }
 
   return (
     <>
@@ -94,7 +100,7 @@ function Tasks() {
             </tr>
           </thead>
 
-          <tbody>
+          <tbody class>
             {tasks.map((todo) => {
               return <Todo key={todo.id} todo={todo} deleteTodo={deleteTodo} setTodoCompleted={setTodoCompleted} />
             })}
@@ -102,9 +108,16 @@ function Tasks() {
         </table>
       </div>
 
-      <div>
+      <div class="left">
         <TodoForm addTodo={addTodo} />
       </div>
+      <div>
+        <h1>Sort By:</h1>
+        <button class="button button1 right" onClick={() => toggleTodo(0)}><span>Incompleted</span></button>
+        <button class="button button1 right" onClick={() => toggleTodo(1)}><span>Completed</span></button>
+        <button class="button button1 right" onClick={() => toggleTodo(null)}><span>Everything</span></button>
+      </div>
+
     </>
   );
 }

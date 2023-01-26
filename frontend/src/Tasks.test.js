@@ -6,6 +6,6 @@ test('renders tasks table', () => {
   render(<Tasks />)
 
   for (var initialTask in initialTasks) {
-    expect(screen.getByText(initialTasks[initialTask].title)).toBeInTheDocument(); 
+    expect(screen.getByText(initialTasks[initialTask].title)).toBeInTheDocument();
   }
 });

@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import './Todo.css';
 
 function TodoForm(props) {
   const { addTodo } = props;
@@ -17,11 +18,12 @@ function TodoForm(props) {
 
       <input
         type="text"
+        class="textbox button1"
         ref={inputRef}
-        placeholder="What needs to be done?"
+        placeholder="Add something new?"
       />
 
-      <button type="submit">Add</button>
+      <button class="button button1" type="submit"><span>Add</span></button>
     </form>
   );
 }
