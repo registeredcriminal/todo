@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #3d5672;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 code {
@@ -14,25 +16,27 @@ code {
 
 table {
   width: 100%;
+  background-color: rgb(114, 163, 206);
 }
 
-td, th {
-  border: 1px solid #ddd;
+td,
+th {
+  border: 1px solid #3876a0;
   padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #84c1e4;
 }
 
 tr:hover {
-  background-color: #ddd;
+  background-color: rgb(81, 142, 192);
 }
 
 th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #723d46;
+  background-color: #3e5ff1;
   color: white;
 }
