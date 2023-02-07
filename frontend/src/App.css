@@ -1,3 +1,19 @@
+body {
+
+  background: linear-gradient(225deg, #ffabab, #ffdaab, #ddffab, #abe4ff, #d9abff);
+  background-size: 300% 300%;
+  box-sizing: border-box;
+  display: table;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  width: 100vw;
+  -webkit-animation: Rainbow 25s ease infinite;
+  -moz-animation: Rainbow 25s ease infinite;
+  animation: Rainbow 25s ease infinite;
+
+}
+
 .App {
   text-align: center;
 }

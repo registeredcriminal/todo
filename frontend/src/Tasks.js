@@ -4,7 +4,7 @@ import './Todo.css';
 import './Tasks.css';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
-
+import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 import initialTasks from './InitialTasks';
 
 function Tasks() {
@@ -116,6 +116,7 @@ function Tasks() {
         <button class="button button1 right" onClick={() => toggleTodo(0)}><span>Incompleted</span></button>
         <button class="button button1 right" onClick={() => toggleTodo(1)}><span>Completed</span></button>
         <button class="button button1 right" onClick={() => toggleTodo(null)}><span>Everything</span></button>
+        <button class="button button1 right" onClick={() => confetti()}><span>Confetti</span></button>
       </div>
 
     </>
